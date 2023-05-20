@@ -41,7 +41,10 @@ class App extends Component {
     return (
       <Container>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
+          <FeedbackOptions
+            onLeaveFeedback={this.onLeaveFeedback}
+            options={['good', 'neutral', 'bad']}
+          />
         </Section>
 
         {totalFeedback > 0 ? (
