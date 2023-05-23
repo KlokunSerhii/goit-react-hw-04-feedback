@@ -9,8 +9,6 @@ class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
-    positivePercentage: 0,
   };
   onLeaveFeedback = ({ target: { name } }) => {
     this.setState(prevState => {
@@ -43,11 +41,11 @@ class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             onLeaveFeedback={this.onLeaveFeedback}
-            options={['good', 'neutral', 'bad']}
+            options={Object.keys(this.state)}
           />
         </Section>
 
-        {totalFeedback > 0 ? (
+        {totalFeedback > 0 && (
           <Section title="Statistics">
             <Statistics
               good={good}
@@ -57,7 +55,8 @@ class App extends Component {
               positivePercentage={positivePercentage}
             />
           </Section>
-        ) : (
+        )}
+        {!totalFeedback && (
           <Section>
             <Notification message="There is no feedback" />
           </Section>
