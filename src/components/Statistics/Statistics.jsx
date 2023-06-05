@@ -9,7 +9,7 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
         <ListItem>Good:{good}</ListItem>
         <ListItem>Neutral:{neutral}</ListItem>
         <ListItem>Bad:{bad}</ListItem>
-        <ListItem>Total:{total} st</ListItem>
+        <ListItem>Total:{total} шт</ListItem>
         <ListItem>Positive feedback:{positivePercentage}%</ListItem>
       </List>
     </>
